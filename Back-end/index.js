@@ -1,6 +1,6 @@
 import express, { request, response } from "express";
 import { PORT, mongoDBURL } from "./config.js";
-// import { Task } from "./models/taskModel.js";
+import { Task } from "./models/taskModel.js";
 import mongoose from "mongoose";
 
 
