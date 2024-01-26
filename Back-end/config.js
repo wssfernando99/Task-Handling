@@ -1,3 +1,3 @@
-export const PORT = 8080;
+export const PORT = 5555;
 
-export const mongoDBURL = 'mongodb+srv://sarindusauranga:MGXBOnpjoWi5oc0z@task.odtwydv.mongodb.net/?retryWrites=true&w=majority'
+export const mongoDBURL = 'mongodb+srv://sarindusauranga:Sarindu99@task.odtwydv.mongodb.net/?retryWrites=true&w=majority'
