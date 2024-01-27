@@ -35,7 +35,7 @@ function App() {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/tasks'); // Replace with your API endpoint
+      const response = await axios.get('http://localhost:5555/tasks'); // Replace with your API endpoint
       setTasks(response.data);
     } catch (error) {
       console.error('Error fetching tasks:', error);
@@ -44,7 +44,7 @@ function App() {
 
   const addTask = async () => {
     try {
-      const response = await axios.post('http://localhost:3001/tasks', { title: newTask }); // Replace with your API endpoint
+      const response = await axios.post('http://localhost:5555/tasks', { title: newTask }); // Replace with your API endpoint
       setTasks([...tasks, response.data]);
       setNewTask('');
     } catch (error) {
