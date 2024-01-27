@@ -44,8 +44,8 @@ app.post('/tasks', async(request,response)=>{
 app.get('/tasks', async(request,response)=>{
     try{
         const tasks = await Task.find({});
-
-        return response.status(201).send(tasks);
+        response.status(200).json({tasks:tasks});
+        
     }
     catch(error){
         console.log(error.message);
