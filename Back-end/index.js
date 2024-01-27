@@ -20,7 +20,8 @@ app.post('/tasks', async(request,response)=>{
         if(
             !request.body.title||
             !request.body.description||
-            !request.body.duedate
+            !request.body.duedate||
+            !request.body.status
         ){
             return response.status(400).send({
                 message:'All required fields: title, description, duedate',
@@ -30,6 +31,7 @@ app.post('/tasks', async(request,response)=>{
             title: request.body.title,
             description: request.body.description,
             duedate: request.body.duedate,
+            status: request.body.status,
         };
         const task = await Task.create(newtask);
         return response.status(200).send(task);
@@ -67,13 +69,15 @@ app.get('/tasks/:id', async(request,response)=>{
     }
 })
 
+
 //route for update the task
 app.put('/tasks/:id', async(request,response)=>{
     try{
         if(
             !request.body.title||
             !request.body.description||
-            !request.body.duedate
+            !request.body.duedate||
+            !request.body.status
         ){
             return response.status(400).send({
                 message:'All required fields: title, description, duedate',

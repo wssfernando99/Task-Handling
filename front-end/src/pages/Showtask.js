@@ -48,6 +48,10 @@ const Showtask = () => {
             <span>{task.duedate}</span>
           </div>
           <div className='my-4'>
+            <span className='text-xl mr-4 text-gray-500'>Status</span>
+            <span>{task.status}</span>
+          </div>
+          <div className='my-4'>
             <span className='text-xl mr-4 text-gray-500'>Create Time</span>
             <span>{new Date(task.createdAt).toString()}</span>
           </div>

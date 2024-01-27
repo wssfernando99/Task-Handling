@@ -30,7 +30,7 @@ const Homepage = () => {
       <div className='flex justify-between items-center'>
         <h1 className='text-3xl my-8'>Task List</h1>
         <Link to='/createtask'>
-          <MdOutlineAddBox className='text-sky-800 text-4xl' />
+          <div className='flex justify-between item-center border border-slate-300 rounded-md'><p className='text-3xl my-8'>Create Task</p></div>
         </Link>
       </div>
       {loading ? (
@@ -43,6 +43,7 @@ const Homepage = () => {
             <th className='border border-slate-600 rounded-md'>Title</th>
             <th className='border border-slate-600 rounded-md max-md:hidden' >Description</th>
             <th className='border border-slate-600 rounded-md max-md:hidden' >Due date</th>
+            <th className='border border-slate-600 rounded-md max-md:hidden' >Status</th>
             <th className='border border-slate-600 rounded-md'>Operation</th>
             </tr>
             </thead>
@@ -60,6 +61,9 @@ const Homepage = () => {
                         </td>
                         <td className='border border-slate-700 rounded-md text-center max-md:hidden'>
                         {task.duedate}
+                        </td>
+                        <td className='border border-slate-700 rounded-md text-center max-md:hidden'>
+                        {task.status}
                         </td>
                         <td className='border border-slate-700 rounded-md text-center'>
                         <div className='flex justify-center gap-x-4'>

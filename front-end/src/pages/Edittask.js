@@ -8,6 +8,7 @@ const Edittask = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [duedate, setDuedate] = useState('');
+  const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const {id} = useParams();
@@ -18,6 +19,7 @@ const Edittask = () => {
     .then((response) => {
         setDescription(response.data.description);
         setDuedate(response.data.duedate)
+        setStatus(response.data.status)
         setTitle(response.data.title)
         setLoading(false);
       }).catch((error) => {
@@ -32,6 +34,7 @@ const Edittask = () => {
       title,
       description,
       duedate,
+      status,
     };
     setLoading(true);
     axios
@@ -54,7 +57,7 @@ const Edittask = () => {
       {loading ? <Spinner /> : ''}
       <div className='flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto'>
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Title</label>
+          <label className='text-xl mr-4 text-gray-500'>Edit Title</label>
           <input
             type='text'
             value={title}
@@ -63,7 +66,7 @@ const Edittask = () => {
           />
         </div>
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Description</label>
+          <label className='text-xl mr-4 text-gray-500'>Edit Description</label>
           <input
             type='text'
             value={description}
@@ -72,11 +75,20 @@ const Edittask = () => {
           />
         </div>
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Due Date</label>
+          <label className='text-xl mr-4 text-gray-500'>Edit Due Date</label>
           <input
-            type='number'
+            type='Date'
             value={duedate}
             onChange={(e) => setDuedate(e.target.value)}
+            className='border-2 border-gray-500 px-4 py-2  w-full '
+          />
+        </div>
+        <div className='my-4'>
+          <label className='text-xl mr-4 text-gray-500'>Edit Status</label>
+          <input
+            type='text'
+            value={status}
+            onChange={(e) => setStatus(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2  w-full '
           />
         </div>
