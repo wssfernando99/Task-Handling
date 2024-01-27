@@ -14,7 +14,7 @@ const Edittask = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`http://localhost:5555/books/${id}`)
+    axios.get(`http://localhost:5555/tasks/${id}`)
     .then((response) => {
         setDescription(response.data.description);
         setDuedate(response.data.duedate)

@@ -13,7 +13,7 @@ const Deletetask = () => {
   const handleDeleteBook = () => {
     setLoading(true);
     axios
-      .delete(`http://localhost:5555/books/${id}`)
+      .delete(`http://localhost:5555/tasks/${id}`)
       .then(() => {
         setLoading(false);
         navigate('/');
